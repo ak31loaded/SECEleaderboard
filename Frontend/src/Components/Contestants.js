@@ -41,7 +41,7 @@ export default function Contestants() {
         parsedData = parsedData.result;
         parsedData.sort(compare);
         setuserdata(parsedData)
-        console.log(userdata);
+        
 
     }
 
