@@ -2,6 +2,7 @@ import React from 'react'
 
 export default function ScoreBoardTable (props) {
   let toaccount="https://codeforces.com/profile/"+props.e.CFid;
+   
     return (
         <>
             <tr>

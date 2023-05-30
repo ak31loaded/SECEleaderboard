@@ -72,7 +72,7 @@ export default function Contests() {
     data.forEach(function (value, key) {
       let flag = 0;
       for (let j = 0; j < value.length; j++) {
-        if (value[j].name === name) {
+        if (value[j].name === CFid) {
           flag = 1;
           temp.push(value[j].point);
           TotalScore+=value[j].point;
@@ -122,6 +122,7 @@ export default function Contests() {
         
         {
               table.map((element) => {
+                
                 return (
                   <ScoreBoardTable pos={a++}e={element}/>
                 )
