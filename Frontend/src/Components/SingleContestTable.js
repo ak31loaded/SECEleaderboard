@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-const URL = "https://seceleaderboard.onrender.com/users";
+const URL = "https://seceleaderboard2k22.onrender.com/users";
 let handles = "";
 export default function SingleContestTable() {
     const fetchHandler = async () => {

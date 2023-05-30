@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import { useEffect } from 'react';
 import ScoreBoardTable from './ScoreBoardTable';
-const URLcontest = "https://seceleaderboard.onrender.com/contests";
-const URLuser = "https://seceleaderboard.onrender.com/users";
+const URLcontest = "https://seceleaderboard2k22.onrender.com/contests";
+const URLuser = "https://seceleaderboard2k22.onrender.com/users";
 
 export default function Contests() {
   const fetchHandlerC = async () => {
@@ -64,7 +64,9 @@ export default function Contests() {
   }
   const table=[];
   for (let i = 0; i < user.length; i++) {
-    let name = (user[i].CFid);
+    let name = (user[i].name);
+    let CFid = (user[i].CFid);
+    
     let temp = [];
     let TotalScore=0;
     data.forEach(function (value, key) {
@@ -80,7 +82,7 @@ export default function Contests() {
       if (flag === 0)
         temp.push(0);
     })
-    table.push({name,TotalScore, temp});
+    table.push({CFid,name,TotalScore, temp});
   }
   
   function compare( a, b ) {

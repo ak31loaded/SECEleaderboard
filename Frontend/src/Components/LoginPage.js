@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import { UserContext } from '../App';
 export default function LoginPage() {
     const {state,dispatch} = useContext(UserContext)
-    let url = "https://seceleaderboard.onrender.com/login";
+    let url = "https://seceleaderboard2k22.onrender.com/login";
 
     const [email, setemail] = useState()
     const [password, setpassword] = useState()

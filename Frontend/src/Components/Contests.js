@@ -5,8 +5,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { UserContext } from "../App";
 import { useContext } from "react";
-const URL = "https://seceleaderboard.onrender.com/contests";
-const URLdelete = "https://seceleaderboard.onrender.com/deletecontest";
+const URL = "https://seceleaderboard2k22.onrender.com/contests";
+const URLdelete = "https://seceleaderboard2k22.onrender.com/deletecontest";
 
 export default function Contests() {
     const { state, dispatch } = useContext(UserContext)

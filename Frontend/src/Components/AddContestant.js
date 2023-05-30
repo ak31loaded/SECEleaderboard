@@ -3,7 +3,7 @@ import { useState } from 'react'
 import axios from 'axios';
 import { UserContext } from "../App";
 import { useContext } from "react";
-let url="https://seceleaderboard.onrender.com/adduser";
+let url="https://seceleaderboard2k22.onrender.com/adduser";
 
 export default function AddContestant() {
   const {state,dispatch} = useContext(UserContext)

@@ -3,8 +3,8 @@ import { useState } from 'react'
 import axios from 'axios';
 import { UserContext } from "../App";
 import { useContext } from "react";
-let url="https://seceleaderboard.onrender.com/addcontest";
-let URL="https://seceleaderboard.onrender.com/users";
+let url="https://seceleaderboard2k22.onrender.com/addcontest";
+let URL="https://seceleaderboard2k22.onrender.com/users";
 
 
 export default function AddContest() {

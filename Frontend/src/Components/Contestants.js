@@ -5,8 +5,8 @@ import { useState } from 'react';
 import axios from 'axios';
 import { UserContext } from "../App";
 import { useContext } from "react";
-const URL = "https://seceleaderboard.onrender.com/users";
-const URLdelete = "https://seceleaderboard.onrender.com/deleteuser";
+const URL = "https://seceleaderboard2k22.onrender.com/users";
+const URLdelete = "https://seceleaderboard2k22.onrender.com/deleteuser";
 
 export default function Contestants() {
     const { state, dispatch } = useContext(UserContext)
@@ -15,6 +15,7 @@ export default function Contestants() {
         let data = await axios.get(URL);
         
         fetchData(data.data.users);
+
     }
     const [userdata, setuserdata] = useState([]);
     const fetchData = async (event) => {
@@ -40,12 +41,14 @@ export default function Contestants() {
         parsedData = parsedData.result;
         parsedData.sort(compare);
         setuserdata(parsedData)
+        console.log(userdata);
 
     }
 
     useEffect(() => {
         
         fetchHandler();
+        
     }, [userdata])
 
 
@@ -78,7 +81,7 @@ export default function Contestants() {
             <>
 
                 <td>{props.rank}</td>
-                <td><b><a href={toaccount} target="_blank" rel="noreferrer">{props.cfid}</a></b></td>
+                <td><b><a href={toaccount} target="_blank" rel="noreferrer">{props.cfid} ({props.firstName} {props.lastName})</a></b></td>
                 <td>{props.rating}</td>
                 <td>{props.maxrating}</td>
                 <td>{props.position}</td>
@@ -116,7 +119,7 @@ export default function Contestants() {
                         return (
                             <tr>
 
-                                <UserCard key={a} rank={a++} cfid={element.handle} rating={element.rating} maxrating={element.maxRating} position={element.rank} maxposition={element.maxRank} />
+                                <UserCard key={a} rank={a++} firstName={element.firstName} lastName={element.lastName} cfid={element.handle} rating={element.rating} maxrating={element.maxRating} position={element.rank} maxposition={element.maxRank} />
 
 
                             </tr>
