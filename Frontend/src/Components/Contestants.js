@@ -88,7 +88,7 @@ export default function Contestants() {
             <>
 
                 <td>{props.rank}</td>
-                <td><b><a href={toaccount} target="_blank" rel="noreferrer">{props.cfid} ({props.firstName} {props.lastName})</a></b></td>
+                <td><b><a href={toaccount} target="_blank" rel="noreferrer">{props.cfid}</a></b></td>
                 <td>{props.rating}</td>
                 <td>{props.maxrating}</td>
                 <td>{props.position}</td>

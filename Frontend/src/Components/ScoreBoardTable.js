@@ -7,7 +7,7 @@ export default function ScoreBoardTable (props) {
         <>
             <tr>
             <td><b>{props.pos}</b></td>
-            <td><b><a href={toaccount} target="_blank" rel="noreferrer">{props.e.CFid} ({props.e.name}) </a></b></td>
+            <td><b><a href={toaccount} target="_blank" rel="noreferrer">{props.e.CFid} </a></b></td>
             <td><b>{props.e.TotalScore}</b></td>
             {
               props.e.temp.map((element) => {
