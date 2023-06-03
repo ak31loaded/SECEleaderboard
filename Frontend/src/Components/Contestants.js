@@ -39,6 +39,13 @@ export default function Contestants() {
             return 0;
         }
         parsedData = parsedData.result;
+        for(let x=0;x<parsedData.length;x++)
+        {
+            if(parsedData[x].rating==null)
+            {
+               parsedData[x].rating=0
+            }
+        }
         parsedData.sort(compare);
         setuserdata(parsedData)
         
