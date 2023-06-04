@@ -84,11 +84,12 @@ export default function Contestants() {
 
         }
         let toaccount="https://codeforces.com/profile/"+props.cfid;
+        console.log(props);
         return (
             <>
 
                 <td>{props.rank}</td>
-                <td><b><a href={toaccount} target="_blank" rel="noreferrer">{props.cfid}</a></b></td>
+                <td><b><a href={toaccount} target="_blank" rel="noreferrer">{props.cfid}{props.firstName?" ("+props.firstName+")":""}</a></b></td>
                 <td>{props.rating}</td>
                 <td>{props.maxrating}</td>
                 <td>{props.position}</td>
