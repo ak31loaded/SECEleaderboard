@@ -51,26 +51,32 @@ export default function Contests() {
       temp.push({ name, point });
     }
     data.set(contest[i].contestNumber, temp);
+    
   }
   const table = [];
   for (let i = 0; i < user.length; i++) {
     let name = user[i].name;
     let CFid = user[i].CFid;
-
+    
     let temp = [];
     let TotalScore = 0;
+    // console.log(data)
     data.forEach(function (value, key) {
       let flag = 0;
+      // console.log(value)
       for (let j = 0; j < value.length; j++) {
-        if (value[j].name === CFid) {
+        let lowercasevalue=value[j].name.toLowerCase();
+        let lowercaseCFid=CFid.toLowerCase();
+        if (lowercaseCFid === lowercasevalue) {
           flag = 1;
           temp.push(value[j].point);
           TotalScore += value[j].point;
           break;
         }
       }
-      if (flag === 0) temp.push(0);
-    });
+      if(flag === 0) temp.push(0);
+    }
+    );
     table.push({ CFid, name, TotalScore, temp });
   }
 
@@ -85,7 +91,6 @@ export default function Contests() {
   }
 
   table.sort(compare);
-
   let a = 1;
 
   return (
@@ -112,6 +117,7 @@ export default function Contests() {
         </thead>
         <tbody>
           {table.map((element) => {
+            
             return <ScoreBoardTable pos={a++} e={element} />;
           })}
         </tbody>

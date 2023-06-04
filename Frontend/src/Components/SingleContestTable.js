@@ -68,6 +68,8 @@ export default function SingleContestTable() {
       
     for(let i=0;i<userdata.length;i++)
     {
+        console.log(userdata[i].party.members[0]);
+        console.log(userdata[i].rank)
         getpoints(userdata[i].rank);
         points.push(point);
     }
