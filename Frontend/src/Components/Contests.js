@@ -5,6 +5,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { UserContext } from "../App";
 import { useContext } from "react";
+import { Loader } from './Loader';
 const URL = "https://seceleaderboard2k22.onrender.com/contests";
 const URLdelete = "https://seceleaderboard2k22.onrender.com/deletecontest";
 
@@ -14,7 +15,7 @@ export default function Contests() {
         let data = await axios.get(URL).then((res) => res.data);
         return data;
     }
-    const [contest, setcontest] = useState([1760])
+    const [contest, setcontest] = useState([])
     useEffect(() => {
         fetchHandler().then(data => {
             setcontest(data.contests);
@@ -63,7 +64,7 @@ export default function Contests() {
 
 
     return (
-        // <>
+        contest.length?
         <div class="main">
             <ul class="cards">
                 {contest.map((element) => {
@@ -75,6 +76,6 @@ export default function Contests() {
                     )
                 })}
             </ul>
-        </div>
+        </div>:<Loader/>
     )
 }

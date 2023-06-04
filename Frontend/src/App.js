@@ -15,6 +15,7 @@ import { reducer } from './Reducer/UseReducer';
 import LogOutPage from './Components/LogOutPage';
 import { decodeToken, useJwt } from 'react-jwt';
 import SingleContestTable from './Components/SingleContestTable';
+import { Loader } from './Components/Loader';
 export const UserContext=createContext();
 const auth=localStorage.getItem("token");
 const valid=decodeToken(auth)
@@ -27,6 +28,7 @@ const App=()=> {
 
       <BrowserRouter>
       <Navbar />
+      
       <Routes >
           <Route exact path="/contestants" element={<Contestants/>} />
           <Route exact path="/contests" element={<Contests />} />
@@ -37,8 +39,6 @@ const App=()=> {
           <Route exact path="/scoreboard" element={<ScoreBoard/>} />
           <Route exact path="/login" element={<LoginPage/>} />
           <Route exact path="/logout" element={<LogOutPage/>} />
-          
-
       </Routes>
     </BrowserRouter>
   </UserContext.Provider>

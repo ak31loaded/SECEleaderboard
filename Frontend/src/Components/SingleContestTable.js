@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { Loader } from './Loader';
 const URL = "https://seceleaderboard2k22.onrender.com/users";
 let handles = "";
 export default function SingleContestTable() {
@@ -73,6 +74,7 @@ export default function SingleContestTable() {
      
     let a = 1;
     return (
+        userdata.length?
         <div className="m-4 scrollmenu">
             <table className="table">
                 <thead className="table-dark">
@@ -97,6 +99,6 @@ export default function SingleContestTable() {
             </table>
 
 
-        </div>
+        </div>:<Loader/>
     );
 }

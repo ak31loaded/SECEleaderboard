@@ -5,6 +5,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { UserContext } from "../App";
 import { useContext } from "react";
+import { Loader } from './Loader';
 const URL = "https://seceleaderboard2k22.onrender.com/users";
 const URLdelete = "https://seceleaderboard2k22.onrender.com/deleteuser";
 
@@ -17,7 +18,7 @@ export default function Contestants() {
         fetchData(data.data.users);
 
     }
-    const [userdata, setuserdata] = useState([]);
+    const [userdata, setuserdata] = useState();
     const fetchData = async (event) => {
         let handles = "";
         event.map((element) => {
@@ -105,7 +106,9 @@ export default function Contestants() {
 
 
     return (
+        userdata?
         <div className="m-4 scrollmenu">
+            
             <table className="table">
                 <thead className="table-dark">
                     <tr>
@@ -142,6 +145,6 @@ export default function Contestants() {
             </table>
 
 
-        </div>
+        </div>:<Loader/>
     );
 }

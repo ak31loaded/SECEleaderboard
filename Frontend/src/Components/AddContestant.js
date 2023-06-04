@@ -22,6 +22,13 @@ export default function AddContestant() {
   // }
   const sendRequest=async()=>
   {
+    if(name=="")
+    {
+       alert("Enter name!!");
+       return;
+       
+    }
+
     if(state)
     {
     let cfurl=`https://codeforces.com/api/user.info?handles=${cfid}`;
